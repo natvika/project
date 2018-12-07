@@ -10,11 +10,11 @@ export class HelpTickets {
     }
     
     async activate() {
-        await this.helpTickets.getHelpTicket(this.userObj);
+        await this.helpTickets.getHelpTickets(this.userObj);
     }
 
     async getHelpTickets() {
-        await this.helpTickets.getHelpTicket(this.userObj);
+        await this.helpTickets.getHelpTickets(this.userObj);
     }
 
     newHelpTicket() {
