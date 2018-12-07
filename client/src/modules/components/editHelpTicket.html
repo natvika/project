@@ -1,0 +1,27 @@
+<template>
+    <div class="list-group-item">
+        <span click.trigger="back()"><i data-feather="arrow-left-circle"></i></span>
+        <span click.trigger="save()" style="margin-left:5px;"><i data-feather="save"></i></span>
+        <span show.bind="user._id" click.trigger="delete()"><i data-feather="trash-2"></i></span>
+    </div>
+    <div class="form-group" style="margin-top:20px;">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" readonly.bind="helpTicket_id" value.bind="helpTicket.title" id="title"
+            placeholder="Title">
+
+        <div class="form-group">
+            <label for="content">Description</label>
+            <textarea value.bind="helpTicketContent.content" class="form-control" rows="8"></textarea>
+        </div>
+        <div class="card" repeat.for="content of helpTickets.helpTicketsContentsArray">
+            <div class="card-body">
+                <div class="row" style="padding:3px;">
+                    <span innerhtml.bind="content.dateCreated | formatDate"></span><br />${content.personId.firstName}
+                    ${content.personId.lastName}</div>
+                <div class="col-9" style="border-left-style: solid;border-left-width:1px;">
+                    ${content.content}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
