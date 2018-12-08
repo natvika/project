@@ -32,4 +32,9 @@ export class HelpTicket {
             return serverResponse;
         }
     }
+    
+    async uploadFile(files, id) {
+        await this.data.uploadFiles(files, this.HELP_TICKET_CONTENT_SERVICE + "/upload/" + id );
+    }
+    
 }

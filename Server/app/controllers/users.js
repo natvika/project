@@ -43,6 +43,16 @@ module.exports = function (app, config) {
             })
     }));
 
+    router.put("/users", requireAuth, asyncHandler(async (req, res) => {
+        logger.log("info", "Updating user");
+        await User.findOneAndUpdate({ _id: req.body._id }, req.body, {
+          new: true
+        }).then(result => {
+          res.status(200).json(result);
+        });
+      })
+    );
+
     router.put('/users/password/:userId', requireAuth, function (req, res, next) {
         logger.log('Update user ' + req.params.userId, 'verbose');
         User.findById(req.params.userId)

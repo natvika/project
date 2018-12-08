@@ -7,8 +7,8 @@
                         <thead>
                             <tr>
                                 <th colspan="4">
-                                    <span click.trigger="newUser()"><i data-feather="plus"></i></span>
-                                    <span click.trigger="getUsers()" style="margin-left:5px;"><i data-feather="refresh-cw"></i></span>
+                                    <span click.trigger="newHelpTicket()"><i data-feather="plus"></i></span>
+                                    <span click.trigger="getHelpTickets()" style="margin-left:5px;"><i data-feather="refresh-cw"></i></span>
                                 </th>
                             </tr>
 
@@ -20,11 +20,11 @@
                             </tr>
                         </thead>
                     <tbody>
-                        <tr click.trigger="editHelpTicket(helpTicket)" repeat.for="helpTicket of helpTickets.helpTicketsArray">
-                            <td>${helpTicket.title}</td>
-                            <td>${helpTicket.status}</td>
-                            <td>${helpTicket.personId.firstName} ${helpTicket.personId.lastName} </td>
-                            <td>${helpTicket.ownerId.firstName} ${helpTicket.ownerId.lastName} </td>
+                        <tr repeat.for="helpTicket of helpTickets.helpTicketsArray">
+                            <td click.trigger="editHelpTicket(helpTicket)">${helpTicket.title}</td>
+                            <td click.trigger="editHelpTicket(helpTicket)">${helpTicket.status}</td>
+                            <td click.trigger="editHelpTicket(helpTicket)">${helpTicket.personId.firstName} ${helpTicket.personId.lastName} </td>
+                            <td click.trigger="editHelpTicket(helpTicket)">${helpTicket.ownerId.firstName} ${helpTicket.ownerId.lastName} </td>
                         </tr>
                     </tbody>
                 </table>
