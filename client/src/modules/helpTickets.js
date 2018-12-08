@@ -25,16 +25,13 @@ export class HelpTickets {
         this.showHelpTicketEditForm = true;
     }
 
-    async getHelpTicketsContents() {
-        await this.helpTickets.getHelpTicketsContents(helpTicket._id)
-    }
-
     async editHelpTicket(helpTicket) {
         this.helpTicket = helpTicket;
         this.helpTicketContent = {
             personId: this.userObj._id,
             content: ""
         };
+        await this.helpTickets.getHelpTicketsContents(helpTicket._id)
         this.openEditForm();
     }
 
