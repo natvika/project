@@ -6,7 +6,7 @@ export class HelpTickets {
     constructor(helpTicket) {
         this.helpTickets = helpTicket;
         this.showHelpTicketEditForm = false;
-        this.userObj = JSON.parse(sessionStorage.getItem('userObj'));
+        this.userObj = JSON.parse(sessionStorage.getItem("userObj"));
     }
 
     async activate() {
