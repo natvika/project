@@ -21,20 +21,18 @@ export class HelpTicket {
             this.helpTicketsArray = [];
         }
     }
-    
+
 
     async getHelpTicketsContents(helpTicket) {
         let url = this.HELP_TICKET_CONTENT_SERVICE;
-        if (userObj.role == "staff" || userObj.role == "admin") {
-             url += '/helpTickets/' + userObj._id;
-         }    
+        url += '/helpTickets/' + helpTicket;
         let response = await this.data.get(url);
-        if(!response.error){
-          this.helpTicketsContentsArray = response;
+        if (!response.error) {
+            this.helpTicketsContentsArray = response;
         } else {
-          this.helpTicketsContentsArray = [];
+            this.helpTicketsContentsArray = [];
         }
-      }
+    }
 
     async saveHelpTicket(helpTicket) {
         let serverResponse;
@@ -47,15 +45,15 @@ export class HelpTicket {
             return serverResponse;
         }
     }
-    
+
     async delete(helpTicket) {
         if (helpTicket && helpTicket._id) {
-          await this.data.delete(this.HELP_TICKET_SERVICE + "/" + helpTicket._id);
+            await this.data.delete(this.HELP_TICKET_SERVICE + "/" + helpTicket._id);
         }
-      }
-    
-    async uploadFile(files, id) {
-        await this.data.uploadFiles(files, this.HELP_TICKET_CONTENT_SERVICE + "/upload/" + id );
     }
-    
+
+    async uploadFile(files, id) {
+        await this.data.uploadFiles(files, this.HELP_TICKET_CONTENT_SERVICE + "/upload/" + id);
+    }
+
 }

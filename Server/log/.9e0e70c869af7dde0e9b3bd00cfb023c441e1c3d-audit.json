@@ -164,6 +164,16 @@
             "date": 1544479389886,
             "name": "log\\error-2018-12-10-16.log",
             "hash": "2348ba1fefb822d3654cedaa9c7356a0"
+        },
+        {
+            "date": 1544495812689,
+            "name": "log\\error-2018-12-10-20.log",
+            "hash": "60c8e30f6ae46aac3b69d6c0db3a5d58"
+        },
+        {
+            "date": 1544495812693,
+            "name": "log\\application-2018-12-10-20.log",
+            "hash": "fce67b7411933bae1b4d05c6fbf2cbdb"
         }
     ]
 }
